@@ -1,0 +1,12 @@
+jog_joint_node:
+  joint_names:
+    - joint1
+    - joint2
+    - joint3
+    - joint4
+
+jog_frame_node:
+  group_names:
+    - manipulator
+  link_names:
+    - link3

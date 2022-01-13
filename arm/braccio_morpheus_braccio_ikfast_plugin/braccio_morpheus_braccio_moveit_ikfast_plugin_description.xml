@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<library path="lib/libbraccio_morpheus_braccio_moveit_ikfast_plugin">
+  <class name="braccio_morpheus_braccio/IKFastKinematicsPlugin" type="braccio_morpheus_braccio::IKFastKinematicsPlugin" base_class_type="kinematics::KinematicsBase">
+    <description>IKFast61 plugin for closed-form kinematics of braccio_morpheus braccio</description>
+  </class>
+</library>

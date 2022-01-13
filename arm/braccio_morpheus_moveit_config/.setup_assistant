@@ -1,0 +1,10 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: braccio_morpheus
+    relative_path: urdf/braccio_morpheus.urdf
+  SRDF:
+    relative_path: config/braccio_morpheus.srdf
+  CONFIG:
+    author_name: giacomo franchini
+    author_email: giacomo.franchini.1@studenti.unipd.it
+    generated_timestamp: 1619006566

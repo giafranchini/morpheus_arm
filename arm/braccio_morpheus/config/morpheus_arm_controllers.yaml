@@ -1,0 +1,19 @@
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 5.0
+
+  arm_trajectory_controller:
+    type: position_controllers/JointTrajectoryController
+    joints: [joint1, joint2, joint3, joint4]
+    constraints:
+      goal_time: 0.5
+      stopped_velocity_tolerance: 0.05
+      allow_partial_joints_goal: True
+      joint1: {trajectory: 0.1, goal: 0.1}
+      joint2: {trajectory: 0.1, goal: 0.1}
+      joint3: {trajectory: 0.1, goal: 0.1}
+      joint4: {trajectory: 0.1, goal: 0.1}
+        
+  gripper_controller:
+    type: position_controllers/JointPositionController
+    joint: gripper_finger1_joint

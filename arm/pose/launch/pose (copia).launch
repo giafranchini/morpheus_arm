@@ -1,0 +1,28 @@
+<launch>
+  <node name="pose_node" pkg="pose" type="pose_node" respawn="false" output="screen">
+     <param name="x1" value="0.3" />
+     <param name="y1" value="-0.076" />
+     <param name="z1" value="0.4" />
+     <param name="pitch1" value="0.5" />
+     
+     <param name="x2" value="0.5" />
+     <param name="y2" value="0.3" />
+     <param name="z2" value="0.6" />
+     <param name="pitch2" value="3" />
+         
+     <param name="x3" value="0.5" />
+     <param name="y3" value="-0.3" />
+     <param name="z3" value="0.6" />
+     <param name="pitch3" value="3" />
+
+     <param name="x4" value="0.2" />
+     <param name="y4" value="-0.3" />
+     <param name="z4" value="0.2" />
+     <param name="pitch4" value="1" />  
+     
+     <param name="x5" value="0.2" />
+     <param name="y5" value="0.3" />
+     <param name="z5" value="0.2" />
+     <param name="pitch5" value="1" />    
+  </node>
+</launch>

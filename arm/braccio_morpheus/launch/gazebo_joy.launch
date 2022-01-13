@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <!-- Definition of joints, actuators, transmissions -->
+  <param name="robot_description" textfile="$(find braccio_morpheus)/urdf/braccio_morpheus.urdf" />
+
+  <!-- Load joint controllers configuration to the parameter server -->
+  <rosparam file="$(find braccio_morpheus)/config/morpheus_arm_controllers_joy.yaml" command="load" />
+
+  <!-- Trajectory controller starter -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+        args="joint_state_controller gripper_controller joint1_position_controller joint2_position_controller joint3_position_controller joint4_position_controller" output="screen"/>
+
+  <!-- Convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
+    <param name="publish_frequency" type="double" value="50.0" />
+    <param name="tf_prefix" type="string" value="" />       
+    <remap from="/joint_states" to="/joint_states" />
+  </node>
+
+  <!-- Lancia Gazebo -->
+  <include
+    file="$(find gazebo_ros)/launch/empty_world.launch" >
+    <arg name="paused" value="false" />
+  </include>
+
+  <!--node name="tf_footprint_base" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 base_link base_footprint 40" /-->
+
+  <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" args="-file $(find braccio_morpheus)/urdf/braccio_morpheus.urdf -urdf -model braccio_morpheus -z 0.2 -x 0.0 -y 0.0" output="screen" />
+
+  <!--node name="fake_joint_calibration" pkg="rostopic" type="rostopic" args="pub /calibrated std_msgs/Bool true" /-->
+
+</launch>
