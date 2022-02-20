@@ -1,0 +1,3 @@
+[submodule "eposx_hardware"]
+	path = eposx_hardware
+	url = https://github.com/giafranchini/eposx_hardware.git
